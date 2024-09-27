@@ -1,0 +1,48 @@
+li a {
+    color:green;
+}
+
+body {
+    background: steelblue;
+}
+
+#prescription_box {
+    background-color: white;
+    width: 80%;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+#medication_box {
+    background-color: white;
+    width: 80%;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+#top_page_links {
+    background-color: white;
+    width: 80%;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

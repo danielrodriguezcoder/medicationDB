@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients' Index</title>
+    <link rel="stylesheet" href="{% static 'patients/style.css' %}">
+</head>
+<body>
+    <div id='top_page_links'>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'patients:index' %}">Prescriptions</a>
+    </div>
+    <div id="prescription_box">
+        <h2>{{ user.get_username }}'s prescriptions</h2>
+        <p>Here is the section where users only see prescription assigned to their accounts.</p>
+        {% if prescription_list %}
+            <ul>
+            {% for prescription in prescription_list %}
+                <li><a href="{% url 'patients:detail' prescription.id %}">{{ prescription.prescription_text }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No prescriptions are available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

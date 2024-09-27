@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prescription's detail</title>
+    <link rel="stylesheet" href="{% static 'patients/style.css' %}">
+</head>
+
+<body>
+    <div id='top_page_links'>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'patients:index' %}">Prescriptions</a>
+    </div>
+
+    <div id="medication_box">
+        <h2>Medication prescribed in: {{ prescription.prescription_text }}</h2>
+        <p>This page will display a list of medications assigned to the selected prescription.</p>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        {% if prescription.medication_set.all %}
+        <table>
+            <tr>
+                <th>Medication</th>
+                <th>Dosage</th>
+            </tr>
+            {% for medication in prescription.medication_set.all %}
+                <tr>
+                    <td>{{ medication.chosen_medication }}</td>
+                    <td>{{ medication.medication_dose }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No medication registered in this prescription.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

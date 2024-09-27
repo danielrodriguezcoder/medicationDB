@@ -1,0 +1,22 @@
+li a {
+    color:green;
+}
+body {
+    background: steelblue;
+}
+
+#main_text {
+    background-color: white;
+    width: 80%;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+#top_page_links {
+    background-color: white;
+    width: 80%;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+}
